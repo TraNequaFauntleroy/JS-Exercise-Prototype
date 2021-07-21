@@ -1,6 +1,6 @@
 # Constructors, Prototypes and _this_
 
-## JavaScript Fundamentals
+## JavaScript Fundamentals 
 
 ## Objectives
 
