@@ -19,6 +19,13 @@ Airplane.prototype.land = function () {
   this.isFlying = false;
 };
 
+const testPlane = new Airplane('planeJane');
+testPlane.takeOff();
+
+console.log('TEST', testPlane.isFlying);
+console.log('TEST 2', testPlane);
+
+
 
 /*
 // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -91,10 +98,20 @@ console.log(tranequa.toString());
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
-  
+function Car(model, milesPerGallon) {
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this.odometer = 0;
 }
 
+Car.prototype.fill = function(gallons) {
+  this.tank = this.tank + gallons;
+}
+
+const chevy = new Car(10);
+
+console.log('task 2',chevy);
 
 /*
   TASK 3
@@ -103,10 +120,26 @@ function Car() {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
- 
+function Baby(name, age, favoriteToy) {
+  Person.call(this, name, age);
+  this.favoriteToy = favoriteToy;
 }
 
+Baby.prototype = Object.create(Person.prototype);
+Baby.prototype.play = function() {
+  return `Playing ${this.favoriteToy}`
+}
+
+const personTwo = new Baby('Tehila', 3, 'doll');
+
+
+personTwo.play('doll');
+personTwo.play('teddy bear'); /*I don't understand why this is not printing */
+personTwo.play('plane'); /*I don't understand why this is printing */
+
+console.log('task 3', personTwo.play());
+console.log('task 3', personTwo); 
+console.log('task 3', personTwo);
 
 /* 
   TASK 4
