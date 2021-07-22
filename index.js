@@ -109,10 +109,13 @@ Car.prototype.fill = function(gallons) {
   this.tank = this.tank + gallons;
 }
 
-const chevy = new Car(10);
+const chevy = new Car('Chevy', 33);
+
+chevy.fill(10);
 
 console.log('task 2',chevy);
 
+ 
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
@@ -144,10 +147,10 @@ console.log('task 3', personTwo);
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. window: an error. returns EVERYTHING. We don't want that.
+  2. implicit: it's implied that 'this' is referring to whatever is left of the dot.
+  3. explict: we have to explicitly assign what 'this' is by using .call, .bind, or .apply.
+  4. new: constructs a new object and 'this' points to it.
 */
 
 
